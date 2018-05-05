@@ -8,9 +8,9 @@ import br.com.connectcargas.model.Motorista;
 
 public interface IMotoristaService {
 	
-	public void salvar(Motorista motorista) throws SQLException;
-	public void deletar(Motorista motorista) throws SQLException;
+	public boolean salvar(Motorista motorista) throws SQLException;
+	public boolean deletar(int id) throws SQLException;
 	public List<Motorista> consultar();
-	public Motorista atualizar(Motorista motorista);
+	public boolean atualizar(Motorista motorista) throws SQLException;
 	
 }

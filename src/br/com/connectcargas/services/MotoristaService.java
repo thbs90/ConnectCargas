@@ -1,5 +1,6 @@
 package br.com.connectcargas.services;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import br.com.connectcargas.dao.IMotoristaDAO;
@@ -15,13 +16,14 @@ public class MotoristaService implements IMotoristaService {
 	}
 
 	@Override
-	public void salvar(Motorista motorista) {
-		// TODO Auto-generated method stub
+	public boolean salvar(Motorista motorista) throws SQLException {
+		return this.dao.salvar(motorista);
 	}
 
 	@Override
-	public void deletar(Motorista motorista) {
-		
+	public boolean deletar(int id) throws SQLException {
+		return this.dao.deletar(id);
+	
 	}
 
 	@Override
@@ -31,13 +33,16 @@ public class MotoristaService implements IMotoristaService {
 	}
 
 	@Override
-	public Motorista atualizar(Motorista motorista) {
-		if (motorista == null) {
-			return null;
-		} if (motorista.getId() == null) {
-			return null;
-		}
-		return null;
+	public boolean atualizar(Motorista motorista) throws SQLException {
+		return this.dao.atualizar(motorista);
 	}
+//	public Motorista atualizar(Motorista motorista) {
+//		if (motorista == null) {
+//			return null;
+//		} if (motorista.getId() == null) {
+//			return null;
+//		}
+//		return null;
+//	}
 
 }
